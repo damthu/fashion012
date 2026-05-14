@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>패션 쇼핑몰</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial;
+    background:#f4f4f4;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.info{
+    padding:12px;
+}
+
+.name{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.price{
+    color:#e91e63;
+    font-weight:bold;
+}
+
+/* popup */
+.popup{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    width:300px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.join{background:#e91e63;color:white;}
+.no{background:#ccc;margin-left:10px;}
+</style>
+</head>
+
+<body>
+
+<header>🛍 패션 온라인 쇼핑몰</header>
+
+<div class="container">
+
+<div class="card">
+<img src="https://picsum.photos/seed/jacket/400/500">
+<div class="info">
+<div class="name">가죽 자켓</div>
+<div class="price">₩89,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/hoodie/400/500">
+<div class="info">
+<div class="name">후드티</div>
+<div class="price">₩45,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/tshirt/400/500">
+<div class="info">
+<div class="name">화이트 티셔츠</div>
+<div class="price">₩25,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/jeans/400/500">
+<div class="info">
+<div class="name">청바지</div>
+<div class="price">₩59,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/dress/400/500">
+<div class="info">
+<div class="name">원피스</div>
+<div class="price">₩79,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/coat/400/500">
+<div class="info">
+<div class="name">롱 코트</div>
+<div class="price">₩129,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/shoes/400/500">
+<div class="info">
+<div class="name">스니커즈</div>
+<div class="price">₩99,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/sport/400/500">
+<div class="info">
+<div class="name">스포츠 자켓</div>
+<div class="price">₩65,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/skirt/400/500">
+<div class="info">
+<div class="name">스커트</div>
+<div class="price">₩39,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/seed/cap/400/500">
+<div class="info">
+<div class="name">모자</div>
+<div class="price">₩19,000</div>
+</div>
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="box">
+<h2>🎁 가입 시 10% 할인!</h2>
+<p>지금 가입하면 할인 혜택!</p>
+
+<button class="join" onclick="join()">참여하기</button>
+<button class="no" onclick="closePopup()">괜찮아요</button>
+</div>
+</div>
+
+<script>
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+
+function join(){
+    alert("회원가입 페이지로 이동!");
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
